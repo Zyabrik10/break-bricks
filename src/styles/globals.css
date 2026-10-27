@@ -1,0 +1,23 @@
+.grid-container {
+  --grid-wrap: wrap;
+  --grid-direction: row;
+  --grid-items: 1;
+  --grid-items-gap: 0;
+
+  display: flex;
+  gap: var(--grid-items-gap);
+  flex-wrap: var(--grid-wrap);
+  flex-direction: var(--grid-direction);
+}
+
+.grid-container > * {
+  flex-basis: calc(
+    (100% - (var(--grid-items) - 1) * var(--grid-items-gap)) / var(--grid-items)
+  );
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.hidden {
+  display: none;
+}

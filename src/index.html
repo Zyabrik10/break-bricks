@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parcel Vanilla App</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- Home menu portal -->
+    <div class="ui-wrapper" data-portal="home-menu">
+      <h1 class="home-menu-title">Break Bricks</h1>
+
+      <div class="home-menu-buttons">
+        <button class="ui-button home-menu-button" data-purpose="start">
+          Start
+        </button>
+        <button class="ui-button home-menu-button" data-purpose="settings">
+          Settings
+        </button>
+        <button class="ui-button home-menu-button">Stats</button>
+      </div>
+    </div>
+
+    <!-- Settings portal -->
+    <div class="settings ui-wrapper" data-portal="settings">
+      <button class="ui-button" data-purpose="go-back">Back</button>
+      <button class="ui-button" data-purpose="default-settings">Default</button>
+
+      <h1>Settings</h1>
+
+      <div class="grid-container settings-wrapper">
+        <div class="pair">
+          <p>Particles:</p>
+
+          <button class="ui-button" data-purpose="edit-particles">Edit</button>
+        </div>
+        <div class="pair">
+          <p>Colors:</p>
+
+          <button class="ui-button" data-purpose="edit-colors">Edit</button>
+        </div>
+
+        <div class="pair">
+          <p>Audio:</p>
+
+          <button class="ui-button" data-purpose="edit-audio">Edit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Particles system settings portal -->
+    <div class="settings ui-wrapper" data-portal="particles-settings">
+      <button class="ui-button" data-purpose="go-back">Back</button>
+      <button class="ui-button" data-purpose="default-particles">
+        Default
+      </button>
+
+      <h1>Particles settings</h1>
+
+      <div class="settings-wrapper">
+        <label for="particles-check" class="pair">
+          <p>Particles (on/off):</p>
+          <input id="particles-check" type="checkbox" />
+        </label>
+      </div>
+
+      <div id="particles-on-settings" class="grid-container settings-wrapper">
+        <label for="particles-max" class="pair">
+          <p>Max particles on hit:</p>
+          <input id="particles-max" type="number" min="1" max="50" value="30" />
+        </label>
+        <label for="bricks-particles-check" class="pair">
+          <p>Bricks particles (on/off):</p>
+          <input id="bricks-particles-check" type="checkbox" />
+        </label>
+        <label for="walls-particles-check" class="pair">
+          <p>Walls particles (on/off):</p>
+          <input id="walls-particles-check" type="checkbox" />
+        </label>
+        <label for="paddle-particles-check" class="pair">
+          <p>Paddle particles (on/off):</p>
+          <input id="paddle-particles-check" type="checkbox" />
+        </label>
+        <label for="bonus-particles-check" class="pair">
+          <p>Bonus particles (on/off):</p>
+          <input id="bonus-particles-check" type="checkbox" />
+        </label>
+
+        <label for="tail-particles-check" class="pair">
+          <p>Tail particles (on/off):</p>
+          <input id="tail-particles-check" type="checkbox" />
+        </label>
+        <div id="max-tail-particles-settings">
+          <label for="max-tail-particles" class="pair">
+            <p>Max tail particles:</p>
+            <input
+              id="max-tail-particles"
+              type="number"
+              min="1"
+              max="50"
+              value="1"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colors settings portal -->
+    <div class="settings ui-wrapper" data-portal="colors-settings">
+      <button class="ui-button" data-purpose="go-back">Back</button>
+      <button class="ui-button" data-purpose="default-colors">Default</button>
+
+      <h1>Colors settings</h1>
+
+      <div id="graphics-type-colors" class="settings-wrapper">
+        <div class="grid-container">
+          <label for="ball-color" class="pair">
+            <p>Ball color:</p>
+
+            <select id="ball-color">
+              <option value="array-random" selected>Random from array</option>
+              <option value="custom">Custom</option>
+              <option value="sprite">Sprite</option>
+            </select>
+          </label>
+          <label for="ball-custom-color" class="pair">
+            <p>Ball custom color:</p>
+
+            <input id="ball-custom-color" type="color" value="#010101" />
+          </label>
+        </div>
+
+        <div class="grid-container">
+          <label for="background-color" class="pair">
+            <p>Background color:</p>
+
+            <select id="background-color">
+              <option value="array-random">Random from array</option>
+              <option value="custom" selected>Custom</option>
+              <option value="sprite">Sprite</option>
+            </select>
+          </label>
+          <label for="background-custom-color" class="pair">
+            <p>Background custom color:</p>
+
+            <input id="background-custom-color" type="color" value="#000" />
+          </label>
+        </div>
+
+        <div class="grid-container">
+          <label for="paddle-color" class="pair">
+            <p>Paddle color:</p>
+
+            <select id="paddle-color">
+              <option value="array-random" selected>Random from array</option>
+              <option value="custom">Custom</option>
+              <option value="sprite">Sprite</option>
+            </select>
+          </label>
+          <label for="paddle-custom-color" class="pair">
+            <p>Paddle custom color:</p>
+
+            <input id="paddle-custom-color" type="color" value="#000" />
+          </label>
+        </div>
+
+        <div class="grid-container">
+          <label for="brick-color" class="pair">
+            <p>Brick color:</p>
+
+            <select id="brick-color">
+              <option value="array-random" selected>Random from array</option>
+              <option value="custom">Custom</option>
+              <option value="sprite">Sprite</option>
+            </select>
+          </label>
+          <label for="brick-custom-color" class="pair">
+            <p>Brick custom color:</p>
+
+            <input id="brick-custom-color" type="color" value="#000" />
+          </label>
+        </div>
+
+        <div class="grid-container">
+          <label for="bonus-color" class="pair">
+            <p>Bonus color:</p>
+
+            <select id="bonus-color">
+              <option value="array-random" selected>Random from array</option>
+              <option value="custom">Custom</option>
+              <option value="sprite">Sprite</option>
+            </select>
+          </label>
+          <label for="bonus-custom-color" class="pair">
+            <p>Bonus custom color:</p>
+
+            <input id="bonus-custom-color" type="color" value="#000" />
+          </label>
+        </div>
+
+        <div class="grid-container">
+          <label for="brick-hp-color" class="pair">
+            <p>Brick HP color:</p>
+
+            <select id="brick-hp-color">
+              <option value="array-random" selected>Random from array</option>
+              <option value="custom">Custom</option>
+              <option value="sprite">Sprite</option>
+            </select>
+          </label>
+          <label for="brick-hp-custom-color" class="pair">
+            <p>Brick HP custom color:</p>
+
+            <input id="brick-hp-custom-color" type="color" value="#000" />
+          </label>
+        </div>
+
+        <div>
+          <p>Colors array:</p>
+
+          <div class="grid-container colors-list">
+            <button class="ui-button" data-purpose="add-color">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="graphics-type-sprites"></div>
+    </div>
+
+    <!-- Audio settings portal -->
+    <div class="settings ui-wrapper" data-portal="audio-settings">
+      <button class="ui-button" data-purpose="go-back">Back</button>
+      <button class="ui-button" data-purpose="default-audio">Default</button>
+
+      <h1>Audio settings</h1>
+
+      <div class="settings-wrapper">
+        <label for="master-volume-range" class="pair">
+          <p>
+            Master volume (<span id="master-volume-range-value">100</span>):
+          </p>
+
+          <input id="master-volume-range" type="range" min="0" max="100" />
+        </label>
+      </div>
+
+      <div class="grid-container settings-wrapper">
+        <label for="wall-hit-volume-range" class="pair">
+          <p>
+            Walls hit volume (<span id="wall-hit-volume-range-value">100</span
+            >):
+          </p>
+          <input id="wall-hit-volume-range" type="range" min="0" max="100" />
+        </label>
+
+        <label for="paddle-hit-volume-range" class="pair">
+          <p>
+            Paddle hit volume (<span id="paddle-hit-volume-range-value"
+              >100</span
+            >):
+          </p>
+          <input id="paddle-hit-volume-range" type="range" min="0" max="100" />
+        </label>
+
+        <label for="brick-hit-volume-range" class="pair">
+          <p>
+            Bricks hit volume (<span id="brick-hit-volume-range-value">100</span
+            >):
+          </p>
+          <input id="brick-hit-volume-range" type="range" min="0" max="100" />
+        </label>
+
+        <label for="bonus-hit-volume-range" class="pair">
+          <p>
+            Bonus hit volume (<span id="bonus-hit-volume-range-value">100</span
+            >):
+          </p>
+          <input id="bonus-hit-volume-range" type="range" min="0" max="100" />
+        </label>
+
+        <label for="get-bonus-volume-range" class="pair">
+          <p>
+            Get bonus volume (<span id="get-bonus-volume-range-value">100</span
+            >):
+          </p>
+          <input id="get-bonus-volume-range" type="range" min="0" max="100" />
+        </label>
+
+        <label for="destroy-brick-volume-range" class="pair">
+          <p>
+            Destroy brick volume (<span id="destroy-brick-volume-range-value"
+              >100</span
+            >):
+          </p>
+          <input
+            id="destroy-brick-volume-range"
+            type="range"
+            min="0"
+            max="100"
+          />
+        </label>
+
+        <label for="wall-hit-sound" class="pair">
+          <p>Wall hit sound:</p>
+          <select id="wall-hit-sound">
+            <option value="audios/beep.mp3">beep.mp3</option>
+            <option value="audios/beep2.mp3">beep2.mp3</option>
+            <option value="audios/beep3.mp3">beep3.mp3</option>
+            <option value="audios/beep4.mp3" selected>beep4.mp3</option>
+          </select>
+        </label>
+
+        <label for="paddle-hit-sound" class="pair">
+          <p>Paddle hit sound:</p>
+          <select id="paddle-hit-sound">
+            <option value="audios/beep.mp3">beep.mp3</option>
+            <option value="audios/beep2.mp3">beep2.mp3</option>
+            <option value="audios/beep3.mp3">beep3.mp3</option>
+            <option value="audios/beep4.mp3" selected>beep4.mp3</option>
+          </select>
+        </label>
+
+        <label for="brick-hit-sound" class="pair">
+          <p>Brick hit sound:</p>
+          <select id="brick-hit-sound">
+            <option value="audios/beep.mp3">beep.mp3</option>
+            <option value="audios/beep2.mp3">beep2.mp3</option>
+            <option value="audios/beep3.mp3">beep3.mp3</option>
+            <option value="audios/beep4.mp3" selected>beep4.mp3</option>
+          </select>
+        </label>
+
+        <label for="bonus-hit-sound" class="pair">
+          <p>Bonus hit sound:</p>
+          <select id="bonus-hit-sound">
+            <option value="audios/beep.mp3">beep.mp3</option>
+            <option value="audios/beep2.mp3">beep2.mp3</option>
+            <option value="audios/beep3.mp3">beep3.mp3</option>
+            <option value="audios/beep4.mp3" selected>beep4.mp3</option>
+          </select>
+        </label>
+
+        <label for="get-bonus-sound" class="pair">
+          <p>Get bonus sound:</p>
+          <select id="get-bonus-sound">
+            <option value="audios/beep.mp3">beep.mp3</option>
+            <option value="audios/beep2.mp3">beep2.mp3</option>
+            <option value="audios/beep3.mp3" selected>beep3.mp3</option>
+            <option value="audios/beep4.mp3">beep4.mp3</option>
+          </select>
+        </label>
+
+        <label for="destroy-brick-sound" class="pair">
+          <p>Destroy brick sound sound:</p>
+          <select id="destroy-brick-sound">
+            <option value="audios/beep.mp3">beep.mp3</option>
+            <option value="audios/beep2.mp3" selected>beep2.mp3</option>
+            <option value="audios/beep3.mp3">beep3.mp3</option>
+            <option value="audios/beep4.mp3">beep4.mp3</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <!-- Game pause portal -->
+    <div class="ui-wrapper" data-portal="pause">
+      <h1 class="home-menu-title">Pause</h1>
+
+      <div class="home-menu-buttons">
+        <button class="ui-button home-menu-button" data-purpose="resume">
+          Resume
+        </button>
+        <button class="ui-button home-menu-button" data-purpose="settings">
+          Settings
+        </button>
+        <button class="ui-button home-menu-button" data-purpose="home-menu">
+          Exit
+        </button>
+      </div>
+    </div>
+
+    <!-- Game portal -->
+    <div data-portal="game" class="scenes">
+      <canvas data-layer="1" class="scene-1"></canvas>
+      <!-- <canvas data-layer="2" class="scene-2"></canvas> -->
+    </div>
+
+    <!-- Games List -->
+    <div class="settings ui-wrapper" data-portal="games-list">
+      
+    </div>
+  </body>
+</html>

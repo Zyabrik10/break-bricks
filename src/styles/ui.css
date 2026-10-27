@@ -1,0 +1,94 @@
+.ui-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  height: 100vh;
+
+  background-color: black;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/background.png");
+  background-size: cover;
+  background-position: 0 0;
+
+  color: white;
+
+  padding: 20px;
+}
+
+.ui-wrapper.hidden {
+  display: none;
+}
+
+.ui-button {
+  padding: 10px 20px;
+  background-color: rgb(3, 2, 32);
+  color: white;
+}
+
+.home-menu-buttons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  width: 100%;
+  max-width: 200px;
+}
+
+.home-menu-button {
+  width: 100%;
+  padding: 20px;
+}
+
+.home-menu-title {
+  margin-bottom: 200px;
+}
+
+/* settings portal */
+.settings {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.settings.hidden {
+  display: none;
+}
+
+.settings-wrapper {
+  --grid-items: 2;
+  --grid-items-gap: 20px;
+
+  width: 50%;
+}
+
+.pair {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pair.hidden {
+  display: none;
+}
+
+.colors-list {
+  --grid-items: 10;
+  --grid-items-gap: 10px;
+
+  width: 100%;
+}
+
+.colors-item {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
