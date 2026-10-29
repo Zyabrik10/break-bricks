@@ -314,7 +314,6 @@ export function graphicsInit(gameConfiguration) {
 
   // BONUS
   const bonusColorElement = document.querySelector("select#bonus-color");
-  console.log(gameConfiguration);
   bonusColorElement.value = gameConfiguration.graphics.colors.bonus.type;
 
   const bonusCustomColorElement = document.querySelector(

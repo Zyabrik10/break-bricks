@@ -122,6 +122,14 @@ function portalEvents() {
   audioButton.addEventListener("click", () => {
     goTo("audio-settings");
   });
+
+  // EXIT GAME
+  const exitButton = document.querySelector("button[data-purpose='exit-game']");
+
+  exitButton.addEventListener("click", () => {
+    goTo("home-menu");
+    scene1.get().pause();
+  });
 }
 
 function audioSettingsEvents() {

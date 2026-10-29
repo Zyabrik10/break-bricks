@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parcel Vanilla App</title>
+    <title>Break Bricks v1.0.0</title>
+
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+
     <!-- Home menu portal -->
     <div class="ui-wrapper" data-portal="home-menu">
       <h1 class="home-menu-title">Break Bricks</h1>
@@ -18,7 +20,7 @@
         <button class="ui-button home-menu-button" data-purpose="settings">
           Settings
         </button>
-        <button class="ui-button home-menu-button">Stats</button>
+        <!-- <button class="ui-button home-menu-button">Stats</button> -->
       </div>
     </div>
 
@@ -374,7 +376,7 @@
         <button class="ui-button home-menu-button" data-purpose="settings">
           Settings
         </button>
-        <button class="ui-button home-menu-button" data-purpose="home-menu">
+        <button class="ui-button home-menu-button" data-purpose="exit-game">
           Exit
         </button>
       </div>
@@ -383,12 +385,7 @@
     <!-- Game portal -->
     <div data-portal="game" class="scenes">
       <canvas data-layer="1" class="scene-1"></canvas>
-      <!-- <canvas data-layer="2" class="scene-2"></canvas> -->
     </div>
 
-    <!-- Games List -->
-    <div class="settings ui-wrapper" data-portal="games-list">
-      
-    </div>
   </body>
 </html>
